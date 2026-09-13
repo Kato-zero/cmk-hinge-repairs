@@ -1,0 +1,3500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b4d3a">
+  <meta name="description" content="CMK Laptop Repairs - Professional laptop repair services in Lusaka.">
+  <title>CMK Laptop Repairs | Lusaka</title>
+
+  <style>
+    :root {
+      --green: #0b4d3a;
+      --green-dark: #07392b;
+      --green-light: #e9f5f0;
+      --accent: #18a673;
+      --white: #fff;
+      --black: #101716;
+      --muted: #66736f;
+      --bg: #f7f9f8;
+      --border: #e1e8e5;
+      --danger: #c62828;
+      --danger-bg: #ffebee;
+      --shadow: 0 12px 35px rgba(0,0,0,.08);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, Arial, sans-serif;
+      color: var(--black);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    /* NAV */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      color: var(--green);
+      font-size: 1.05rem;
+    }
+
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--green);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: .92rem;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .nav-cta {
+      background: var(--green);
+      color: white !important;
+      padding: 11px 17px;
+      border-radius: 10px;
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 1.6rem;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 90px 0;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(24,166,115,.13), transparent 30%),
+        linear-gradient(135deg, #f7f9f8, #eaf4f0);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .badge {
+      display: inline-flex;
+      padding: 7px 12px;
+      border-radius: 50px;
+      background: var(--green-light);
+      color: var(--green);
+      font-weight: 800;
+      font-size: .82rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.8rem);
+      line-height: 1.03;
+      letter-spacing: -3px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--green);
+    }
+
+    .hero-text {
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      margin-bottom: 28px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      border: 0;
+      padding: 14px 20px;
+      border-radius: 12px;
+      font-weight: 800;
+      transition: .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: white;
+    }
+
+    .btn-secondary {
+      background: white;
+      border: 1px solid var(--border);
+      color: var(--green);
+    }
+
+    .hero-card {
+      background: var(--green);
+      color: white;
+      border-radius: 28px;
+      padding: 35px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card small {
+      opacity: .8;
+    }
+
+    .price {
+      font-size: 3rem;
+      font-weight: 900;
+      margin: 8px 0;
+    }
+
+    .hero-card ul {
+      list-style: none;
+      margin: 25px 0;
+    }
+
+    .hero-card li {
+      margin: 10px 0;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 80px 0;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 45px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+    }
+
+    /* SERVICES */
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service {
+      background: white;
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: .2s;
+    }
+
+    .service:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: var(--green-light);
+      color: var(--green);
+      font-size: 1.35rem;
+      margin-bottom: 18px;
+    }
+
+    .service h3 {
+      margin-bottom: 6px;
+    }
+
+    .service p {
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .service-price {
+      color: var(--green);
+      font-weight: 900;
+      margin-top: 15px;
+      font-size: 1.2rem;
+    }
+
+    /* PROCESS */
+
+    .process {
+      background: var(--green);
+      color: white;
+    }
+
+    .process .section-head p {
+      color: rgba(255,255,255,.75);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .step {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 18px;
+      padding: 25px;
+    }
+
+    .step-number {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: white;
+      color: var(--green);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    /* PAYMENT */
+
+    .payment-section {
+      background: white;
+    }
+
+    .payment-box {
+      max-width: 900px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      background: var(--green);
+      color: white;
+      padding: 38px;
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .payment-info h2 {
+      font-size: 2.2rem;
+      line-height: 1.1;
+      margin-bottom: 15px;
+    }
+
+    .payment-info p {
+      color: rgba(255,255,255,.78);
+    }
+
+    .payment-info ul {
+      list-style: none;
+      margin-top: 25px;
+    }
+
+    .payment-info li {
+      margin: 10px 0;
+    }
+
+    .payment-form {
+      background: white;
+      color: var(--black);
+      border-radius: 18px;
+      padding: 25px;
+    }
+
+    .payment-form h3 {
+      margin-bottom: 18px;
+    }
+
+    .payment-total {
+      background: var(--green-light);
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 18px;
+      display: flex;
+      justify-content: space-between;
+      font-weight: 800;
+    }
+
+    .payment-total strong {
+      color: var(--green);
+      font-size: 1.2rem;
+    }
+
+    label {
+      display: block;
+      font-weight: 800;
+      font-size: .88rem;
+      margin-bottom: 7px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      outline: none;
+      background: white;
+      margin-bottom: 15px;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--accent);
+    }
+
+    .pay-btn {
+      width: 100%;
+      background: var(--green);
+      color: white;
+      border: 0;
+      padding: 14px;
+      border-radius: 10px;
+      font-weight: 900;
+    }
+
+    .pay-btn:disabled {
+      opacity: .65;
+      cursor: not-allowed;
+    }
+
+    .payment-note {
+      text-align: center;
+      color: var(--muted);
+      font-size: .78rem;
+      margin-top: 10px;
+    }
+
+    /* WHY */
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .why {
+      background: white;
+      padding: 28px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+    }
+
+    .why strong {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .why p {
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    /* REVIEWS */
+
+    .reviews {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .review {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 25px;
+    }
+
+    .stars {
+      color: #e7a900;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .review p {
+      color: var(--muted);
+      margin-bottom: 15px;
+    }
+
+    .review-name {
+      font-weight: 900;
+    }
+
+    /* FAQ */
+
+    .faq {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    details {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: 10px;
+      padding: 18px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    details p {
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: #eef5f2;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .contact-card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+    }
+
+    .contact-item {
+      padding: 15px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-item:last-child {
+      border: 0;
+    }
+
+    .contact-item strong {
+      display: block;
+    }
+
+    .contact-item span {
+      color: var(--muted);
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: var(--green-dark);
+      color: white;
+      padding: 45px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    footer p,
+    footer a {
+      color: rgba(255,255,255,.7);
+    }
+
+    footer h3 {
+      margin-bottom: 12px;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 8px;
+    }
+
+    .copyright {
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.1);
+      color: rgba(255,255,255,.55);
+      font-size: .85rem;
+    }
+
+    /* MODAL */
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(0,0,0,.6);
+      padding: 20px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-box {
+      width: min(520px, 100%);
+      max-height: 90vh;
+      overflow-y: auto;
+      background: white;
+      border-radius: 20px;
+      padding: 28px;
+      position: relative;
+      animation: pop .2s ease;
+    }
+
+    @keyframes pop {
+      from {
+        opacity: 0;
+        transform: scale(.96);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 18px;
+      border: 0;
+      background: transparent;
+      font-size: 1.5rem;
+    }
+
+    .modal-box h2 {
+      margin-bottom: 5px;
+    }
+
+    .modal-subtitle {
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    /* PAYMENT STATUS */
+
+    .payment-status {
+      text-align: center;
+      padding: 25px 5px;
+    }
+
+    .status-icon {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 20px;
+      font-size: 2rem;
+      font-weight: 900;
+    }
+
+    .status-icon.loading {
+      background: var(--green-light);
+      color: var(--green);
+      animation: pulse 1.5s infinite;
+    }
+
+    .status-icon.success {
+      background: var(--green-light);
+      color: var(--green);
+    }
+
+    .status-icon.failed {
+      background: var(--danger-bg);
+      color: var(--danger);
+    }
+
+    @keyframes pulse {
+      0%,100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(.9);
+        opacity: .6;
+      }
+    }
+
+    .spinner {
+      width: 30px;
+      height: 30px;
+      border: 3px solid rgba(11,77,58,.15);
+      border-top-color: var(--green);
+      border-radius: 50%;
+      animation: spin .8s linear infinite;
+      margin: 0 auto;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .reference-box {
+      background: var(--green-light);
+      border-radius: 12px;
+      padding: 14px;
+      margin: 18px 0;
+      font-size: .9rem;
+    }
+
+    .reference-box strong {
+      color: var(--green);
+      display: block;
+      margin-top: 3px;
+    }
+
+    /* ADMIN */
+
+    .admin {
+      display: none;
+      background: #101716;
+      color: white;
+      padding: 50px 0;
+    }
+
+    .admin.active {
+      display: block;
+    }
+
+    .admin-card {
+      background: #17221f;
+      padding: 25px;
+      border-radius: 16px;
+      margin-top: 20px;
+    }
+
+    .booking-row {
+      padding: 15px;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+
+    .booking-row:last-child {
+      border: 0;
+    }
+
+    .booking-row small {
+      color: #a8b5b0;
+    }
+
+    /* TOAST */
+
+    .toast {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 5000;
+      background: #101716;
+      color: white;
+      padding: 14px 18px;
+      border-radius: 12px;
+      display: none;
+      box-shadow: var(--shadow);
+      max-width: 350px;
+    }
+
+    .toast.show {
+      display: block;
+      animation: toast .25s ease;
+    }
+
+    @keyframes toast {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 20px;
+        flex-direction: column;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .hero-grid,
+      .payment-box,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services,
+      .why-grid,
+      .reviews {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 580px) {
+
+      section {
+        padding: 60px 0;
+      }
+
+      .hero {
+        padding: 65px 0;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .services,
+      .why-grid,
+      .reviews,
+      .steps,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .payment-box {
+        padding: 20px;
+      }
+
+      .hero-card {
+        padding: 25px;
+      }
+
+      .buttons .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <div class="container nav-inner">
+
+      <a href="#" class="logo">
+        <span class="logo-icon">CMK</span>
+        <span>CMK Laptop Repairs</span>
+      </a>
+
+      <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+      <div class="nav-links" id="navLinks">
+
+        <a href="#services" onclick="closeMenu()">Services</a>
+        <a href="#how" onclick="closeMenu()">How It Works</a>
+        <a href="#payment" onclick="closeMenu()">Make Payment</a>
+        <a href="#reviews" onclick="closeMenu()">Reviews</a>
+        <a href="#contact" onclick="closeMenu()">Contact</a>
+
+        <a
+          href="#booking"
+          class="nav-cta"
+          onclick="openBooking(); closeMenu(); return false;"
+        >
+          Book Repair
+        </a>
+
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <div class="container hero-grid">
+
+      <div>
+
+        <span class="badge">
+          LUSAKA LAPTOP REPAIR SERVICE
+        </span>
+
+        <h1>
+          We fix laptops.<br>
+          <span>You get back to work.</span>
+        </h1>
+
+        <p class="hero-text">
+          Professional laptop repair, Windows installation,
+          software setup, hinge repairs and troubleshooting.
+          Fast, affordable and convenient.
+        </p>
+
+        <div class="buttons">
+
+          <button
+            class="btn btn-primary"
+            onclick="openBooking()"
+          >
+            Book a Repair
+          </button>
+
+          <a
+            href="#payment"
+            class="btn btn-secondary"
+          >
+            Make a Payment
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="hero-card">
+
+        <small>POPULAR SERVICE</small>
+
+        <h2>Hinge Repair</h2>
+
+        <div class="price">K175</div>
+
+        <p>
+          Broken or damaged laptop hinge?
+          We can repair it and get your laptop
+          looking and working properly again.
+        </p>
+
+        <ul>
+          <li>✓ Professional repair</li>
+          <li>✓ Affordable pricing</li>
+          <li>✓ Same-day service where possible</li>
+        </ul>
+
+        <button
+          class="btn btn-secondary"
+          onclick="openBooking()"
+        >
+          Book Hinge Repair
+        </button>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- SERVICES -->
+
+  <section id="services">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <h2>Our Services</h2>
+
+        <p>
+          Straightforward laptop repairs and technical
+          services at affordable prices.
+        </p>
+
+      </div>
+
+
+      <div class="services">
+
+        <div class="service">
+          <div class="service-icon">🔧</div>
+          <h3>Hinge Repair</h3>
+          <p>Repair damaged, loose or broken laptop hinges.</p>
+          <div class="service-price">K175</div>
+        </div>
+
+        <div class="service">
+          <div class="service-icon">💻</div>
+          <h3>Windows Installation</h3>
+          <p>Fresh Windows installation and setup.</p>
+          <div class="service-price">K120</div>
+        </div>
+
+        <div class="service">
+          <div class="service-icon">⚡</div>
+          <h3>Slow Laptop</h3>
+          <p>Diagnosis and troubleshooting for slow laptops.</p>
+          <div class="service-price">K100</div>
+        </div>
+
+        <div class="service">
+          <div class="service-icon">🔑</div>
+          <h3>Windows Activation</h3>
+          <p>Windows activation and update assistance.</p>
+          <div class="service-price">K100</div>
+        </div>
+
+        <div class="service">
+          <div class="service-icon">🔌</div>
+          <h3>Laptop Power Problem</h3>
+          <p>Diagnosis of laptops that won't power on.</p>
+          <div class="service-price">K150</div>
+        </div>
+
+        <div class="service">
+          <div class="service-icon">📄</div>
+          <h3>Microsoft Office</h3>
+          <p>Microsoft Office installation and setup.</p>
+          <div class="service-price">K100</div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROCESS -->
+
+  <section id="how" class="process">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <h2>How It Works</h2>
+
+        <p>
+          Getting your laptop fixed is simple.
+        </p>
+
+      </div>
+
+
+      <div class="steps">
+
+        <div class="step">
+
+          <div class="step-number">1</div>
+
+          <h3>Book</h3>
+
+          <p>
+            Tell us what is wrong with your laptop.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">2</div>
+
+          <h3>Repair</h3>
+
+          <p>
+            We diagnose and repair the problem.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">3</div>
+
+          <h3>Pay</h3>
+
+          <p>
+            Once the repair is completed,
+            make your payment.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">4</div>
+
+          <h3>Collect</h3>
+
+          <p>
+            Receive your repaired laptop.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PAYMENT -->
+
+  <section id="payment" class="payment-section">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <h2>Make a Payment</h2>
+
+        <p>
+          Enter your details and pay directly using mobile money.
+        </p>
+
+      </div>
+
+
+      <div class="payment-box">
+
+        <div class="payment-info">
+
+          <h2>
+            Pay for your repair.
+          </h2>
+
+          <p>
+            Select your repair, enter your name and mobile
+            money number, then start the payment.
+          </p>
+
+          <ul>
+            <li>✓ Mobile money payment</li>
+            <li>✓ Payment request sent to your phone</li>
+            <li>✓ Automatic payment verification</li>
+            <li>✓ Instant confirmation</li>
+          </ul>
+
+        </div>
+
+
+        <div class="payment-form">
+
+          <h3>
+            Payment Details
+          </h3>
+
+
+          <div class="payment-total">
+
+            <span>
+              Amount Due
+            </span>
+
+            <strong id="paymentAmountDisplay">
+              K175
+            </strong>
+
+          </div>
+
+
+          <label for="paymentService">
+            Repair / Service
+          </label>
+
+          <select
+            id="paymentService"
+            onchange="updatePaymentAmount()"
+          >
+
+            <option
+              value="Hinge Repair"
+              data-price="175"
+            >
+              Hinge Repair — K175
+            </option>
+
+            <option
+              value="Windows Installation"
+              data-price="120"
+            >
+              Windows Installation — K120
+            </option>
+
+            <option
+              value="Slow Laptop Diagnosis"
+              data-price="100"
+            >
+              Slow Laptop — K100
+            </option>
+
+            <option
+              value="Windows Activation"
+              data-price="100"
+            >
+              Windows Activation — K100
+            </option>
+
+            <option
+              value="Laptop Power Problem"
+              data-price="150"
+            >
+              Laptop Power Problem — K150
+            </option>
+
+            <option
+              value="Microsoft Office Installation"
+              data-price="100"
+            >
+              Microsoft Office — K100
+            </option>
+
+          </select>
+
+
+          <label for="customerName">
+            Your Name
+          </label>
+
+          <input
+            type="text"
+            id="customerName"
+            placeholder="Enter your name"
+            autocomplete="name"
+          >
+
+
+          <label for="customerPaymentNumber">
+            Mobile Money Number
+          </label>
+
+          <input
+            type="tel"
+            id="customerPaymentNumber"
+            placeholder="097 XXX XXXX"
+            inputmode="tel"
+            autocomplete="tel"
+          >
+
+
+          <button
+            class="pay-btn"
+            id="startPaymentBtn"
+            onclick="startPayment()"
+          >
+            Pay Now →
+          </button>
+
+
+          <div class="payment-note">
+            A payment request will be sent to your mobile number.
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- WHY CMK -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <h2>
+          Why Choose CMK?
+        </h2>
+
+        <p>
+          Reliable technical support without unnecessary complications.
+        </p>
+
+      </div>
+
+
+      <div class="why-grid">
+
+        <div class="why">
+
+          <strong>
+            Affordable Prices
+          </strong>
+
+          <p>
+            Clear service pricing so you know
+            what you're paying for.
+          </p>
+
+        </div>
+
+
+        <div class="why">
+
+          <strong>
+            Convenient Service
+          </strong>
+
+          <p>
+            Contact us online and arrange
+            your repair easily.
+          </p>
+
+        </div>
+
+
+        <div class="why">
+
+          <strong>
+            Technical Experience
+          </strong>
+
+          <p>
+            Practical experience diagnosing
+            hardware and software problems.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- REVIEWS -->
+
+  <section id="reviews">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <h2>
+          Customer Reviews
+        </h2>
+
+        <p>
+          See what customers have to say about CMK.
+        </p>
+
+      </div>
+
+
+      <div
+        class="reviews"
+        id="reviewsContainer"
+      ></div>
+
+
+      <div
+        style="text-align:center;margin-top:25px;"
+      >
+
+        <button
+          class="btn btn-primary"
+          onclick="openReview()"
+        >
+          Leave a Review
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FAQ -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <h2>
+          Frequently Asked Questions
+        </h2>
+
+      </div>
+
+
+      <div class="faq">
+
+        <details>
+
+          <summary>
+            Where are you located?
+          </summary>
+
+          <p>
+            CMK Laptop Repairs operates in Lusaka.
+            Contact us to arrange the most convenient
+            repair location.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            How long does a repair take?
+          </summary>
+
+          <p>
+            Simple software jobs can often be completed
+            the same day. Hardware repairs depend on the
+            problem and availability of parts.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            Do I pay before the repair?
+          </summary>
+
+          <p>
+            For normal repairs, payment can be made after
+            the repair has been completed and the final
+            amount confirmed.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            Can you repair laptops that won't turn on?
+          </summary>
+
+          <p>
+            Yes. We can diagnose power-related problems
+            and determine the cause.
+          </p>
+
+        </details>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section id="contact" class="contact">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <h2>
+          Contact CMK
+        </h2>
+
+        <p>
+          Ready to get your laptop fixed?
+        </p>
+
+      </div>
+
+
+      <div class="contact-grid">
+
+        <div class="contact-card">
+
+          <div class="contact-item">
+
+            <strong>
+              📱 WhatsApp
+            </strong>
+
+            <span>
+              097 000 0000
+            </span>
+
+          </div>
+
+
+          <div class="contact-item">
+
+            <strong>
+              📍 Location
+            </strong>
+
+            <span>
+              Lusaka, Zambia
+            </span>
+
+          </div>
+
+
+          <div class="contact-item">
+
+            <strong>
+              🕐 Working Hours
+            </strong>
+
+            <span>
+              Monday – Saturday
+            </span>
+
+          </div>
+
+
+          <div
+            class="buttons"
+            style="margin-top:20px;"
+          >
+
+            <a
+              class="btn btn-primary"
+              href="https://wa.me/260970000000?text=Hello%20CMK%20Laptop%20Repairs%2C%20I%20need%20a%20repair."
+              target="_blank"
+            >
+              WhatsApp Us
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="contact-card">
+
+          <h3>
+            Need a repair?
+          </h3>
+
+          <p
+            style="color:var(--muted);margin:10px 0 20px;"
+          >
+            Tell us what is wrong with your laptop
+            and we'll get back to you.
+          </p>
+
+          <button
+            class="btn btn-primary"
+            onclick="openBooking()"
+          >
+            Book a Repair
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ADMIN -->
+
+  <section
+    class="admin"
+    id="admin"
+  >
+
+    <div class="container">
+
+      <h2>
+        CMK Admin
+      </h2>
+
+      <p style="color:#a8b5b0;">
+        Local demo booking management.
+      </p>
+
+
+      <div class="admin-card">
+
+        <h3>
+          Bookings
+        </h3>
+
+        <div id="adminBookings"></div>
+
+      </div>
+
+
+      <div class="admin-card">
+
+        <button
+          class="btn btn-secondary"
+          onclick="clearBookings()"
+        >
+          Clear Bookings
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+
+          <div
+            class="logo"
+            style="color:white;margin-bottom:12px;"
+          >
+
+            <span class="logo-icon">
+              CMK
+            </span>
+
+            <span>
+              CMK Laptop Repairs
+            </span>
+
+          </div>
+
+          <p>
+            Professional laptop repairs and
+            technical services in Lusaka, Zambia.
+          </p>
+
+        </div>
+
+
+        <div>
+
+          <h3>
+            Services
+          </h3>
+
+          <div class="footer-links">
+
+            <a href="#services">
+              Hinge Repair
+            </a>
+
+            <a href="#services">
+              Windows Installation
+            </a>
+
+            <a href="#services">
+              Laptop Diagnosis
+            </a>
+
+            <a href="#services">
+              Office Installation
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <h3>
+            Quick Links
+          </h3>
+
+          <div class="footer-links">
+
+            <a
+              href="#payment"
+            >
+              Make Payment
+            </a>
+
+            <a
+              href="#reviews"
+            >
+              Reviews
+            </a>
+
+            <a
+              href="#contact"
+            >
+              Contact
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="copyright">
+
+        ©
+        <span id="year"></span>
+        CMK Laptop Repairs.
+        All rights reserved.
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- BOOKING MODAL -->
+
+  <div
+    class="modal"
+    id="bookingModal"
+  >
+
+    <div class="modal-box">
+
+      <button
+        class="close"
+        onclick="closeModal('bookingModal')"
+      >
+        ×
+      </button>
+
+
+      <h2>
+        Book a Repair
+      </h2>
+
+      <p class="modal-subtitle">
+        Tell us what you need help with.
+      </p>
+
+
+      <label>
+        Your Name
+      </label>
+
+      <input
+        type="text"
+        id="bookingName"
+        placeholder="Full name"
+      >
+
+
+      <label>
+        WhatsApp / Phone
+      </label>
+
+      <input
+        type="tel"
+        id="bookingPhone"
+        placeholder="097 XXX XXXX"
+      >
+
+
+      <label>
+        Service
+      </label>
+
+      <select id="bookingService">
+
+        <option>
+          Hinge Repair — K175
+        </option>
+
+        <option>
+          Windows Installation — K120
+        </option>
+
+        <option>
+          Slow Laptop Diagnosis — K100
+        </option>
+
+        <option>
+          Windows Activation — K100
+        </option>
+
+        <option>
+          Laptop Power Problem — K150
+        </option>
+
+        <option>
+          Microsoft Office Installation — K100
+        </option>
+
+        <option>
+          Other / Diagnosis Required
+        </option>
+
+      </select>
+
+
+      <label>
+        What is wrong with the laptop?
+      </label>
+
+      <textarea
+        id="bookingProblem"
+        rows="4"
+        placeholder="Describe the problem..."
+      ></textarea>
+
+
+      <button
+        class="pay-btn"
+        onclick="submitBooking()"
+      >
+        Submit Booking
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- PAYMENT MODAL -->
+
+  <div
+    class="modal"
+    id="paymentModal"
+  >
+
+    <div class="modal-box">
+
+      <button
+        class="close"
+        onclick="closePaymentModal()"
+      >
+        ×
+      </button>
+
+      <div id="paymentModalContent"></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- REVIEW MODAL -->
+
+  <div
+    class="modal"
+    id="reviewModal"
+  >
+
+    <div class="modal-box">
+
+      <button
+        class="close"
+        onclick="closeModal('reviewModal')"
+      >
+        ×
+      </button>
+
+
+      <h2>
+        Leave a Review
+      </h2>
+
+      <p class="modal-subtitle">
+        Tell us about your experience.
+      </p>
+
+
+      <label>
+        Your Name
+      </label>
+
+      <input
+        type="text"
+        id="reviewName"
+        placeholder="Your name"
+      >
+
+
+      <label>
+        Rating
+      </label>
+
+      <select id="reviewRating">
+
+        <option value="5">
+          ★★★★★ — Excellent
+        </option>
+
+        <option value="4">
+          ★★★★☆ — Very Good
+        </option>
+
+        <option value="3">
+          ★★★☆☆ — Good
+        </option>
+
+        <option value="2">
+          ★★☆☆☆ — Fair
+        </option>
+
+        <option value="1">
+          ★☆☆☆☆ — Poor
+        </option>
+
+      </select>
+
+
+      <label>
+        Your Review
+      </label>
+
+      <textarea
+        id="reviewText"
+        rows="4"
+        placeholder="Write your review..."
+      ></textarea>
+
+
+      <button
+        class="pay-btn"
+        onclick="submitReview()"
+      >
+        Submit Review
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div
+    class="toast"
+    id="toast"
+  ></div>
+
+
+  <script>
+
+    /* =========================================
+       CMK LAPTOP REPAIRS
+       PAYMENT SYSTEM
+       ========================================= */
+
+
+    let paymentReference = null;
+    let paymentPollTimer = null;
+    let paymentPollCount = 0;
+
+    const MAX_PAYMENT_POLLS = 40;
+    const PAYMENT_POLL_INTERVAL = 3000;
+
+
+    /* NAVIGATION */
+
+    function toggleMenu() {
+
+      document
+        .getElementById("navLinks")
+        .classList
+        .toggle("open");
+
+    }
+
+
+    function closeMenu() {
+
+      document
+        .getElementById("navLinks")
+        .classList
+        .remove("open");
+
+    }
+
+
+    /* MODALS */
+
+    function openModal(id) {
+
+      document
+        .getElementById(id)
+        .classList
+        .add("active");
+
+      document.body.style.overflow = "hidden";
+
+    }
+
+
+    function closeModal(id) {
+
+      document
+        .getElementById(id)
+        .classList
+        .remove("active");
+
+      document.body.style.overflow = "";
+
+    }
+
+
+    function closePaymentModal() {
+
+      if (paymentPollTimer) {
+        clearTimeout(paymentPollTimer);
+        paymentPollTimer = null;
+      }
+
+      closeModal("paymentModal");
+
+    }
+
+
+    /* =========================================
+       PAYMENT AMOUNT
+       ========================================= */
+
+    function updatePaymentAmount() {
+
+      const select =
+        document.getElementById("paymentService");
+
+      const option =
+        select.options[select.selectedIndex];
+
+      const price =
+        option.dataset.price || "0";
+
+      document.getElementById(
+        "paymentAmountDisplay"
+      ).textContent = "K" + price;
+
+    }
+
+
+    /* =========================================
+       START LIPILA PAYMENT
+       ========================================= */
+
+    async function startPayment() {
+
+      const name =
+        document
+          .getElementById("customerName")
+          .value
+          .trim();
+
+      const phone =
+        document
+          .getElementById("customerPaymentNumber")
+          .value
+          .trim();
+
+      const select =
+        document.getElementById("paymentService");
+
+      const option =
+        select.options[select.selectedIndex];
+
+      const service =
+        option.value;
+
+      const amount =
+        Number(option.dataset.price);
+
+
+      if (!name) {
+
+        showToast(
+          "Please enter your name."
+        );
+
+        document
+          .getElementById("customerName")
+          .focus();
+
+        return;
+
+      }
+
+
+      if (!phone) {
+
+        showToast(
+          "Please enter your mobile money number."
+        );
+
+        document
+          .getElementById("customerPaymentNumber")
+          .focus();
+
+        return;
+
+      }
+
+
+      if (!amount || amount <= 0) {
+
+        showToast(
+          "Invalid payment amount."
+        );
+
+        return;
+
+      }
+
+
+      const button =
+        document.getElementById(
+          "startPaymentBtn"
+        );
+
+      button.disabled = true;
+
+      button.textContent =
+        "Starting payment...";
+
+
+      openPaymentProcessing(
+        service,
+        amount
+      );
+
+
+      try {
+
+        const response =
+          await fetch(
+            "/api/createpayment",
+            {
+              method: "POST",
+
+              headers: {
+                "Content-Type":
+                  "application/json",
+                "Accept":
+                  "application/json"
+              },
+
+              body: JSON.stringify({
+
+                amount: amount,
+
+                customer_name: name,
+
+                phone: phone
+
+              })
+
+            }
+          );
+
+
+        const result =
+          await response.json()
+            .catch(() => ({}));
+
+
+        console.log(
+          "Create payment response:",
+          result
+        );
+
+
+        if (
+          !response.ok ||
+          !result.success ||
+          !result.referenceId
+        ) {
+
+          const message =
+            result.message ||
+            "Unable to create payment.";
+
+          throw new Error(message);
+
+        }
+
+
+        paymentReference =
+          result.referenceId;
+
+        paymentPollCount = 0;
+
+
+        showPaymentWaiting(
+          service,
+          amount,
+          paymentReference
+        );
+
+
+        /*
+          Start checking Lipila status.
+        */
+
+        checkPaymentStatus();
+
+      } catch (error) {
+
+        console.error(
+          "PAYMENT ERROR:",
+          error
+        );
+
+        showPaymentFailed(
+          error.message ||
+          "Unable to start payment."
+        );
+
+      } finally {
+
+        button.disabled = false;
+
+        button.textContent =
+          "Pay Now →";
+
+      }
+
+    }
+
+
+    /* =========================================
+       PAYMENT PROCESSING SCREEN
+       ========================================= */
+
+    function openPaymentProcessing(
+      service,
+      amount
+    ) {
+
+      document.getElementById(
+        "paymentModalContent"
+      ).innerHTML = `
+
+        <div class="payment-status">
+
+          <div class="status-icon loading">
+            <div class="spinner"></div>
+          </div>
+
+          <h2>
+            Starting Payment
+          </h2>
+
+          <p class="modal-subtitle">
+            We're sending your payment request.
+          </p>
+
+          <div class="reference-box">
+
+            <div>
+              Service
+            </div>
+
+            <strong>
+              ${escapeHTML(service)}
+            </strong>
+
+            <br>
+
+            <div>
+              Amount
+            </div>
+
+            <strong>
+              K${amount}
+            </strong>
+
+          </div>
+
+          <p style="color:#66736f;font-size:.9rem;">
+            Please wait...
+          </p>
+
+        </div>
+
+      `;
+
+      openModal("paymentModal");
+
+    }
+
+
+    /* =========================================
+       WAITING FOR PAYMENT
+       ========================================= */
+
+    function showPaymentWaiting(
+      service,
+      amount,
+      reference
+    ) {
+
+      document.getElementById(
+        "paymentModalContent"
+      ).innerHTML = `
+
+        <div class="payment-status">
+
+          <div class="status-icon loading">
+            <div class="spinner"></div>
+          </div>
+
+          <h2>
+            Check Your Phone
+          </h2>
+
+          <p class="modal-subtitle">
+            A mobile money payment request
+            has been sent to your number.
+          </p>
+
+          <div class="reference-box">
+
+            <div>
+              Service
+            </div>
+
+            <strong>
+              ${escapeHTML(service)}
+            </strong>
+
+            <br>
+
+            <div>
+              Amount
+            </div>
+
+            <strong>
+              K${amount}
+            </strong>
+
+            <br>
+
+            <div>
+              Reference
+            </div>
+
+            <strong>
+              ${escapeHTML(reference)}
+            </strong>
+
+          </div>
+
+          <p style="color:#66736f;font-size:.9rem;">
+            Approve the payment on your phone.
+          </p>
+
+          <div style="margin-top:20px;">
+
+            <div class="spinner"></div>
+
+          </div>
+
+          <p
+            id="paymentCheckingText"
+            style="
+              color:#66736f;
+              font-size:.82rem;
+              margin-top:12px;
+            "
+          >
+            Waiting for payment confirmation...
+          </p>
+
+        </div>
+
+      `;
+
+    }
+
+
+    /* =========================================
+       CHECK PAYMENT STATUS
+       ========================================= */
+
+    async function checkPaymentStatus() {
+
+      if (!paymentReference) {
+        return;
+      }
+
+
+      paymentPollCount++;
+
+
+      try {
+
+        const response =
+          await fetch(
+            "/api/checkpayment?referenceId=" +
+            encodeURIComponent(
+              paymentReference
+            ),
+            {
+              method: "GET",
+
+              headers: {
+                "Accept":
+                  "application/json"
+              },
+
+              cache: "no-store"
+
+            }
+          );
+
+
+        const result =
+          await response.json()
+            .catch(() => ({}));
+
+
+        console.log(
+          "Payment status:",
+          result
+        );
+
+
+        /*
+          Your checkpayment.js returns:
+
+          {
+            success: true,
+            data: ...
+          }
+
+          Lipila's exact status field can vary,
+          so we inspect the returned object.
+        */
+
+        const status =
+          findPaymentStatus(
+            result.data
+          );
+
+
+        console.log(
+          "Detected payment status:",
+          status
+        );
+
+
+        if (
+          isPaymentSuccessful(status)
+        ) {
+
+          showPaymentSuccess();
+
+          return;
+
+        }
+
+
+        if (
+          isPaymentFailed(status)
+        ) {
+
+          showPaymentFailed(
+            "The payment was declined or failed."
+          );
+
+          return;
+
+        }
+
+
+        if (
+          paymentPollCount >=
+          MAX_PAYMENT_POLLS
+        ) {
+
+          showPaymentFailed(
+            "Payment confirmation timed out. If money was deducted, please contact CMK before trying again."
+          );
+
+          return;
+
+        }
+
+
+        const checkingText =
+          document.getElementById(
+            "paymentCheckingText"
+          );
+
+        if (checkingText) {
+
+          checkingText.textContent =
+            "Checking payment... " +
+            paymentPollCount +
+            "/" +
+            MAX_PAYMENT_POLLS;
+
+        }
+
+
+      } catch (error) {
+
+        console.error(
+          "STATUS CHECK ERROR:",
+          error
+        );
+
+
+        /*
+          A temporary network error should not
+          immediately mark a payment as failed.
+
+          Continue polling.
+        */
+
+      }
+
+
+      paymentPollTimer =
+        setTimeout(
+          checkPaymentStatus,
+          PAYMENT_POLL_INTERVAL
+        );
+
+    }
+
+
+    /* =========================================
+       FIND STATUS FROM LIPILA RESPONSE
+       ========================================= */
+
+    function findPaymentStatus(data) {
+
+      if (!data) {
+        return "";
+      }
+
+
+      /*
+        Try common field names.
+      */
+
+      const possibleValues = [
+
+        data.status,
+
+        data.paymentStatus,
+
+        data.transactionStatus,
+
+        data.collectionStatus,
+
+        data.state,
+
+        data.result?.status,
+
+        data.data?.status,
+
+        data.transaction?.status,
+
+        data.payment?.status
+
+      ];
+
+
+      for (
+        const value of possibleValues
+      ) {
+
+        if (
+          typeof value === "string" &&
+          value.trim()
+        ) {
+
+          return value
+            .trim()
+            .toUpperCase();
+
+        }
+
+      }
+
+
+      return "";
+
+    }
+
+
+    /* =========================================
+       SUCCESS STATUS
+       ========================================= */
+
+    function isPaymentSuccessful(
+      status
+    ) {
+
+      const successfulStatuses = [
+
+        "SUCCESS",
+        "SUCCESSFUL",
+        "COMPLETED",
+        "COMPLETE",
+        "PAID",
+        "PAYMENT_SUCCESS",
+        "TRANSACTION_SUCCESS",
+        "APPROVED"
+
+      ];
+
+
+      return successfulStatuses.includes(
+        status
+      );
+
+    }
+
+
+    /* =========================================
+       FAILED STATUS
+       ========================================= */
+
+    function isPaymentFailed(
+      status
+    ) {
+
+      const failedStatuses = [
+
+        "FAILED",
+        "FAILURE",
+        "DECLINED",
+        "REJECTED",
+        "CANCELLED",
+        "CANCELED",
+        "EXPIRED",
+        "ERROR",
+        "PAYMENT_FAILED",
+        "TRANSACTION_FAILED"
+
+      ];
+
+
+      return failedStatuses.includes(
+        status
+      );
+
+    }
+
+
+    /* =========================================
+       PAYMENT SUCCESS
+       ========================================= */
+
+    function showPaymentSuccess() {
+
+      if (paymentPollTimer) {
+
+        clearTimeout(
+          paymentPollTimer
+        );
+
+        paymentPollTimer = null;
+
+      }
+
+
+      document.getElementById(
+        "paymentModalContent"
+      ).innerHTML = `
+
+        <div class="payment-status">
+
+          <div class="status-icon success">
+            ✓
+          </div>
+
+          <h2>
+            Payment Successful
+          </h2>
+
+          <p class="modal-subtitle">
+            Your payment has been confirmed.
+          </p>
+
+          <div class="reference-box">
+
+            <div>
+              Payment Reference
+            </div>
+
+            <strong>
+              ${escapeHTML(
+                paymentReference || ""
+              )}
+            </strong>
+
+          </div>
+
+          <button
+            class="pay-btn"
+            onclick="finishPayment()"
+          >
+            Done
+          </button>
+
+        </div>
+
+      `;
+
+
+      showToast(
+        "Payment confirmed successfully."
+      );
+
+    }
+
+
+    /* =========================================
+       PAYMENT FAILED
+       ========================================= */
+
+    function showPaymentFailed(
+      message
+    ) {
+
+      if (paymentPollTimer) {
+
+        clearTimeout(
+          paymentPollTimer
+        );
+
+        paymentPollTimer = null;
+
+      }
+
+
+      document.getElementById(
+        "paymentModalContent"
+      ).innerHTML = `
+
+        <div class="payment-status">
+
+          <div class="status-icon failed">
+            !
+          </div>
+
+          <h2>
+            Payment Not Completed
+          </h2>
+
+          <p class="modal-subtitle">
+            ${escapeHTML(message)}
+          </p>
+
+          ${
+            paymentReference
+            ?
+            `
+              <div class="reference-box">
+
+                <div>
+                  Reference
+                </div>
+
+                <strong>
+                  ${escapeHTML(
+                    paymentReference
+                  )}
+                </strong>
+
+              </div>
+            `
+            :
+            ""
+          }
+
+          <button
+            class="pay-btn"
+            onclick="retryPayment()"
+          >
+            Try Again
+          </button>
+
+        </div>
+
+      `;
+
+    }
+
+
+    /* =========================================
+       RETRY
+       ========================================= */
+
+    function retryPayment() {
+
+      paymentReference = null;
+      paymentPollCount = 0;
+
+      closePaymentModal();
+
+      document
+        .getElementById("payment")
+        .scrollIntoView({
+          behavior: "smooth"
+        });
+
+    }
+
+
+    /* =========================================
+       FINISH PAYMENT
+       ========================================= */
+
+    function finishPayment() {
+
+      paymentReference = null;
+      paymentPollCount = 0;
+
+      closePaymentModal();
+
+      showToast(
+        "Thank you. Your payment has been confirmed."
+      );
+
+    }
+
+
+    /* =========================================
+       BOOKING
+       ========================================= */
+
+    function openBooking() {
+
+      openModal(
+        "bookingModal"
+      );
+
+    }
+
+
+    function submitBooking() {
+
+      const name =
+        document
+          .getElementById("bookingName")
+          .value
+          .trim();
+
+      const phone =
+        document
+          .getElementById("bookingPhone")
+          .value
+          .trim();
+
+      const service =
+        document
+          .getElementById("bookingService")
+          .value;
+
+      const problem =
+        document
+          .getElementById("bookingProblem")
+          .value
+          .trim();
+
+
+      if (
+        !name ||
+        !phone ||
+        !problem
+      ) {
+
+        showToast(
+          "Please complete all required fields."
+        );
+
+        return;
+
+      }
+
+
+      const booking = {
+
+        id:
+          "CMK-" +
+          Date.now(),
+
+        name,
+        phone,
+        service,
+        problem,
+
+        date:
+          new Date()
+            .toLocaleString()
+
+      };
+
+
+      const bookings =
+        JSON.parse(
+          localStorage.getItem(
+            "cmkBookings"
+          ) || "[]"
+        );
+
+
+      bookings.unshift(
+        booking
+      );
+
+
+      localStorage.setItem(
+        "cmkBookings",
+        JSON.stringify(bookings)
+      );
+
+
+      closeModal(
+        "bookingModal"
+      );
+
+
+      document.getElementById(
+        "bookingName"
+      ).value = "";
+
+      document.getElementById(
+        "bookingPhone"
+      ).value = "";
+
+      document.getElementById(
+        "bookingProblem"
+      ).value = "";
+
+
+      showToast(
+        "Booking received successfully!"
+      );
+
+
+      renderAdminBookings();
+
+    }
+
+
+    /* =========================================
+       REVIEWS
+       ========================================= */
+
+    const defaultReviews = [
+
+      {
+        name: "Customer",
+        rating: 5,
+        text:
+          "Professional service and my laptop was fixed properly."
+      },
+
+      {
+        name: "Customer",
+        rating: 5,
+        text:
+          "Quick response and affordable pricing. Would recommend CMK."
+      },
+
+      {
+        name: "Customer",
+        rating: 5,
+        text:
+          "Very helpful with my laptop problem. Good technical service."
+      }
+
+    ];
+
+
+    function getReviews() {
+
+      const stored =
+        JSON.parse(
+          localStorage.getItem(
+            "cmkReviews"
+          )
+        );
+
+
+      if (
+        stored &&
+        stored.length
+      ) {
+
+        return stored;
+
+      }
+
+
+      return defaultReviews;
+
+    }
+
+
+    function renderReviews() {
+
+      const container =
+        document.getElementById(
+          "reviewsContainer"
+        );
+
+
+      const reviews =
+        getReviews();
+
+
+      container.innerHTML =
+        reviews
+          .map(review => {
+
+            const rating =
+              Number(review.rating);
+
+
+            const stars =
+              "★".repeat(rating) +
+              "☆".repeat(
+                5 - rating
+              );
+
+
+            return `
+
+              <div class="review">
+
+                <div class="stars">
+                  ${stars}
+                </div>
+
+                <p>
+                  "${escapeHTML(
+                    review.text
+                  )}"
+                </p>
+
+                <div class="review-name">
+                  ${escapeHTML(
+                    review.name
+                  )}
+                </div>
+
+              </div>
+
+            `;
+
+          })
+          .join("");
+
+    }
+
+
+    function openReview() {
+
+      openModal(
+        "reviewModal"
+      );
+
+    }
+
+
+    function submitReview() {
+
+      const name =
+        document
+          .getElementById(
+            "reviewName"
+          )
+          .value
+          .trim();
+
+
+      const rating =
+        document
+          .getElementById(
+            "reviewRating"
+          )
+          .value;
+
+
+      const text =
+        document
+          .getElementById(
+            "reviewText"
+          )
+          .value
+          .trim();
+
+
+      if (
+        !name ||
+        !text
+      ) {
+
+        showToast(
+          "Please complete your review."
+        );
+
+        return;
+
+      }
+
+
+      const reviews =
+        JSON.parse(
+          localStorage.getItem(
+            "cmkReviews"
+          ) || "[]"
+        );
+
+
+      reviews.unshift({
+
+        name,
+        rating,
+        text
+
+      });
+
+
+      localStorage.setItem(
+        "cmkReviews",
+        JSON.stringify(reviews)
+      );
+
+
+      closeModal(
+        "reviewModal"
+      );
+
+
+      document.getElementById(
+        "reviewName"
+      ).value = "";
+
+      document.getElementById(
+        "reviewText"
+      ).value = "";
+
+
+      renderReviews();
+
+
+      showToast(
+        "Thank you for your review!"
+      );
+
+    }
+
+
+    /* =========================================
+       ADMIN
+       ========================================= */
+
+    function renderAdminBookings() {
+
+      const container =
+        document.getElementById(
+          "adminBookings"
+        );
+
+
+      const bookings =
+        JSON.parse(
+          localStorage.getItem(
+            "cmkBookings"
+          ) || "[]"
+        );
+
+
+      if (
+        !bookings.length
+      ) {
+
+        container.innerHTML = `
+
+          <p
+            style="color:#a8b5b0;margin-top:15px;"
+          >
+            No bookings yet.
+          </p>
+
+        `;
+
+        return;
+
+      }
+
+
+      container.innerHTML =
+        bookings
+          .map(booking => `
+
+            <div class="booking-row">
+
+              <strong>
+                ${escapeHTML(
+                  booking.name
+                )}
+              </strong>
+
+              <br>
+
+              <small>
+                ${escapeHTML(
+                  booking.phone
+                )}
+              </small>
+
+              <br>
+
+              <small>
+                ${escapeHTML(
+                  booking.service
+                )}
+              </small>
+
+              <br>
+
+              <small>
+                ${escapeHTML(
+                  booking.problem
+                )}
+              </small>
+
+              <br>
+
+              <small>
+                ${escapeHTML(
+                  booking.date
+                )}
+              </small>
+
+            </div>
+
+          `)
+          .join("");
+
+    }
+
+
+    function clearBookings() {
+
+      if (
+        !confirm(
+          "Delete all bookings?"
+        )
+      ) {
+
+        return;
+
+      }
+
+
+      localStorage.removeItem(
+        "cmkBookings"
+      );
+
+
+      renderAdminBookings();
+
+
+      showToast(
+        "Bookings cleared."
+      );
+
+    }
+
+
+    /* =========================================
+       TOAST
+       ========================================= */
+
+    let toastTimer;
+
+
+    function showToast(
+      message
+    ) {
+
+      const toast =
+        document.getElementById(
+          "toast"
+        );
+
+
+      toast.textContent =
+        message;
+
+
+      toast.classList.add(
+        "show"
+      );
+
+
+      clearTimeout(
+        toastTimer
+      );
+
+
+      toastTimer =
+        setTimeout(
+          () => {
+
+            toast.classList.remove(
+              "show"
+            );
+
+          },
+          3500
+        );
+
+    }
+
+
+    /* =========================================
+       ESCAPE HTML
+       ========================================= */
+
+    function escapeHTML(
+      value
+    ) {
+
+      return String(value)
+        .replace(
+          /&/g,
+          "&amp;"
+        )
+        .replace(
+          /</g,
+          "&lt;"
+        )
+        .replace(
+          />/g,
+          "&gt;"
+        )
+        .replace(
+          /"/g,
+          "&quot;"
+        )
+        .replace(
+          /'/g,
+          "&#039;"
+        );
+
+    }
+
+
+    /* =========================================
+       MODAL BACKDROP
+       ========================================= */
+
+    document
+      .querySelectorAll(".modal")
+      .forEach(modal => {
+
+        modal.addEventListener(
+          "click",
+          event => {
+
+            if (
+              event.target === modal
+            ) {
+
+              if (
+                modal.id ===
+                "paymentModal"
+              ) {
+
+                closePaymentModal();
+
+              } else {
+
+                modal.classList.remove(
+                  "active"
+                );
+
+                document.body.style.overflow =
+                  "";
+
+              }
+
+            }
+
+          }
+        );
+
+      });
+
+
+    /* =========================================
+       ADMIN SHORTCUT
+       ========================================= */
+
+    document.addEventListener(
+      "keydown",
+      event => {
+
+        if (
+          event.ctrlKey &&
+          event.shiftKey &&
+          event.key.toLowerCase() === "a"
+        ) {
+
+          document
+            .getElementById("admin")
+            .classList
+            .toggle("active");
+
+
+          renderAdminBookings();
+
+
+          document
+            .getElementById("admin")
+            .scrollIntoView({
+              behavior: "smooth"
+            });
+
+        }
+
+      }
+    );
+
+
+    /* =========================================
+       YEAR
+       ========================================= */
+
+    document.getElementById(
+      "year"
+    ).textContent =
+      new Date().getFullYear();
+
+
+    /* =========================================
+       INITIALIZE
+       ========================================= */
+
+    renderReviews();
+
+    renderAdminBookings();
+
+    updatePaymentAmount();
+
+  </script>
+
+</body>
+</html>
