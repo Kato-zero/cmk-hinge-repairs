@@ -32,6 +32,7 @@
 
     html {
       scroll-behavior: smooth;
+      overflow-x: hidden;
     }
 
     body {
@@ -39,6 +40,7 @@
       color: var(--black);
       background: var(--bg);
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     button,
@@ -263,6 +265,7 @@
       padding: 25px;
       border: 1px solid var(--border);
       border-radius: var(--radius);
+      overflow: hidden;
       transition: .2s;
     }
 
@@ -281,6 +284,16 @@
       color: var(--green);
       font-size: 1.35rem;
       margin-bottom: 18px;
+    }
+
+    .service-img {
+      display: block;
+      width: calc(100% + 50px);
+      height: 140px;
+      object-fit: cover;
+      margin: -25px -25px 18px -25px;
+      border-radius: var(--radius) var(--radius) 0 0;
+      background: var(--green-light);
     }
 
     .service h3 {
@@ -769,6 +782,7 @@
     .toast {
       position: fixed;
       right: 20px;
+      left: 20px;
       bottom: 20px;
       z-index: 5000;
       background: #101716;
@@ -778,6 +792,7 @@
       display: none;
       box-shadow: var(--shadow);
       max-width: 350px;
+      margin-left: auto;
     }
 
     .toast.show {
@@ -807,9 +822,27 @@
         left: 0;
         right: 0;
         background: white;
-        padding: 20px;
+        padding: 10px 20px 20px;
         flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
         border-bottom: 1px solid var(--border);
+        max-height: calc(100vh - 72px);
+        overflow-y: auto;
+      }
+
+      .nav-links a {
+        padding: 12px 4px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links a:last-child {
+        border-bottom: 0;
+        margin-top: 8px;
+      }
+
+      .nav-cta {
+        text-align: center;
       }
 
       .nav-links.open {
@@ -873,6 +906,56 @@
 
       .buttons .btn {
         width: 100%;
+      }
+    }
+
+    @media (max-width: 400px) {
+
+      .logo span:last-child {
+        font-size: .92rem;
+      }
+
+      .logo-icon {
+        width: 36px;
+        height: 36px;
+      }
+
+      .badge {
+        font-size: .74rem;
+        padding: 6px 10px;
+      }
+
+      h1 {
+        font-size: clamp(2.1rem, 9vw, 2.6rem);
+        letter-spacing: -1px;
+      }
+
+      .hero-text {
+        font-size: 1rem;
+      }
+
+      .price {
+        font-size: 2.3rem;
+      }
+
+      .service-img {
+        height: 120px;
+      }
+
+      .modal-box {
+        padding: 20px;
+      }
+
+      .status-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.6rem;
+      }
+
+      .step,
+      .why,
+      .contact-card {
+        padding: 20px;
       }
     }
   </style>
@@ -1012,6 +1095,14 @@
       <div class="services">
 
         <div class="service">
+          <img class="service-img" src="PASTE-IMAGE-LINK-HERE-1" alt="BIOS Reprogramming" onerror="this.style.display=\'none\'">
+          <div class="service-icon">🧬</div>
+          <h3>BIOS Reprogramming</h3>
+          <p>BIOS chip reprogramming and firmware recovery.</p>
+        </div>
+
+        <div class="service">
+          <img class="service-img" src="PASTE-IMAGE-LINK-HERE-2" alt="Hinge Repair" onerror="this.style.display=\'none\'">
           <div class="service-icon">🔧</div>
           <h3>Hinge Repair</h3>
           <p>Repair damaged, loose or broken laptop hinges.</p>
@@ -1019,38 +1110,46 @@
         </div>
 
         <div class="service">
-          <div class="service-icon">💻</div>
-          <h3>Windows Installation</h3>
-          <p>Fresh Windows installation and setup.</p>
-          <div class="service-price">K120</div>
+          <img class="service-img" src="PASTE-IMAGE-LINK-HERE-3" alt="Laptop Suddenly Went Off" onerror="this.style.display=\'none\'">
+          <div class="service-icon">⚫</div>
+          <h3>Laptop Suddenly Went Off</h3>
+          <p>Diagnosis for laptops that shut down unexpectedly.</p>
         </div>
 
         <div class="service">
-          <div class="service-icon">⚡</div>
-          <h3>Slow Laptop</h3>
-          <p>Diagnosis and troubleshooting for slow laptops.</p>
-          <div class="service-price">K100</div>
+          <img class="service-img" src="PASTE-IMAGE-LINK-HERE-4" alt="No Boot Device Found" onerror="this.style.display=\'none\'">
+          <div class="service-icon">💽</div>
+          <h3>No Boot Device Found</h3>
+          <p>Diagnosis and repair for boot device errors.</p>
         </div>
 
         <div class="service">
+          <img class="service-img" src="PASTE-IMAGE-LINK-HERE-5" alt="BCD Error" onerror="this.style.display=\'none\'">
+          <div class="service-icon">🖥️</div>
+          <h3>BCD Error</h3>
+          <p>Fixing boot configuration data errors.</p>
+        </div>
+
+        <div class="service">
+          <img class="service-img" src="PASTE-IMAGE-LINK-HERE-6" alt="Laptop Not Charging" onerror="this.style.display=\'none\'">
+          <div class="service-icon">🔋</div>
+          <h3>Laptop Not Charging</h3>
+          <p>Diagnosis for charging and power delivery faults.</p>
+        </div>
+
+        <div class="service">
+          <img class="service-img" src="PASTE-IMAGE-LINK-HERE-7" alt="Windows Activation Required" onerror="this.style.display=\'none\'">
           <div class="service-icon">🔑</div>
-          <h3>Windows Activation</h3>
-          <p>Windows activation and update assistance.</p>
+          <h3>Windows Activation Required</h3>
+          <p>Windows activation and licensing assistance.</p>
           <div class="service-price">K100</div>
         </div>
 
         <div class="service">
-          <div class="service-icon">🔌</div>
-          <h3>Laptop Power Problem</h3>
-          <p>Diagnosis of laptops that won't power on.</p>
-          <div class="service-price">K150</div>
-        </div>
-
-        <div class="service">
-          <div class="service-icon">📄</div>
-          <h3>Microsoft Office</h3>
-          <p>Microsoft Office installation and setup.</p>
-          <div class="service-price">K100</div>
+          <img class="service-img" src="PASTE-IMAGE-LINK-HERE-8" alt="Something Else" onerror="this.style.display=\'none\'">
+          <div class="service-icon">📝</div>
+          <h3>Something Else?</h3>
+          <p>Not seeing your issue listed? Tell us what's wrong and we'll take a look.</p>
         </div>
 
       </div>
@@ -1648,19 +1747,19 @@
           <div class="footer-links">
 
             <a href="#services">
+              BIOS Reprogramming
+            </a>
+
+            <a href="#services">
               Hinge Repair
             </a>
 
             <a href="#services">
-              Windows Installation
+              No Boot Device Found
             </a>
 
             <a href="#services">
-              Laptop Diagnosis
-            </a>
-
-            <a href="#services">
-              Office Installation
+              Windows Activation
             </a>
 
           </div>
@@ -1764,37 +1863,52 @@
 
 
       <label>
+        Location (where you stay)
+      </label>
+
+      <input
+        type="text"
+        id="bookingLocation"
+        placeholder="e.g. Kabulonga, Lusaka"
+      >
+
+
+      <label>
         Service
       </label>
 
       <select id="bookingService">
 
         <option>
+          BIOS Reprogramming
+        </option>
+
+        <option>
           Hinge Repair — K175
         </option>
 
         <option>
-          Windows Installation — K120
+          Laptop Suddenly Went Off
         </option>
 
         <option>
-          Slow Laptop Diagnosis — K100
+          No Boot Device Found
         </option>
 
         <option>
-          Windows Activation — K100
+          BCD Error
         </option>
 
         <option>
-          Laptop Power Problem — K150
+          Laptop Not Charging
         </option>
 
         <option>
-          Microsoft Office Installation — K100
+          Windows Activation Required — K100
         </option>
 
         <option>
-          Other / Diagnosis Required
+          Something Else / Not Listed
         </option>
 
       </select>
@@ -1815,7 +1929,7 @@
         class="pay-btn"
         onclick="submitBooking()"
       >
-        Submit Booking
+        Continue on WhatsApp →
       </button>
 
     </div>
@@ -2839,6 +2953,9 @@
     }
 
 
+    const CMK_WHATSAPP_NUMBER = "260967858633";
+
+
     function submitBooking() {
 
       const name =
@@ -2850,6 +2967,12 @@
       const phone =
         document
           .getElementById("bookingPhone")
+          .value
+          .trim();
+
+      const location =
+        document
+          .getElementById("bookingLocation")
           .value
           .trim();
 
@@ -2868,6 +2991,7 @@
       if (
         !name ||
         !phone ||
+        !location ||
         !problem
       ) {
 
@@ -2888,6 +3012,7 @@
 
         name,
         phone,
+        location,
         service,
         problem,
 
@@ -2917,6 +3042,21 @@
       );
 
 
+      const whatsappMessage =
+        "Hello CMK Laptop Repairs, I'd like to book a repair.\n\n" +
+        "Name: " + name + "\n" +
+        "Location: " + location + "\n" +
+        "Phone: " + phone + "\n" +
+        "Service: " + service + "\n" +
+        "Problem: " + problem;
+
+      const whatsappUrl =
+        "https://wa.me/" +
+        CMK_WHATSAPP_NUMBER +
+        "?text=" +
+        encodeURIComponent(whatsappMessage);
+
+
       closeModal(
         "bookingModal"
       );
@@ -2931,16 +3071,26 @@
       ).value = "";
 
       document.getElementById(
+        "bookingLocation"
+      ).value = "";
+
+      document.getElementById(
         "bookingProblem"
       ).value = "";
 
 
       showToast(
-        "Booking received successfully!"
+        "Redirecting you to WhatsApp to confirm..."
       );
 
 
       renderAdminBookings();
+
+
+      window.open(
+        whatsappUrl,
+        "_blank"
+      );
 
     }
 
@@ -3211,6 +3361,14 @@
               <small>
                 ${escapeHTML(
                   booking.phone
+                )}
+              </small>
+
+              <br>
+
+              <small>
+                ${escapeHTML(
+                  booking.location || ""
                 )}
               </small>
 
