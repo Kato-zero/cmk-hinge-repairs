@@ -1185,71 +1185,30 @@
           </h3>
 
 
-          <div class="payment-total">
+         <div class="payment-total">
+  
 
-            <span>
-              Amount Due
-            </span>
+  
+</div>
 
-            <strong id="paymentAmountDisplay">
-              K175
-            </strong>
+<label for="paymentAmount">
+  Amount to Pay (ZMW)
+</label>
 
-          </div>
+<input
+  type="number"
+  id="paymentAmount"
+  min="1"
+  step="1"
+  value="175"
+  placeholder="Enter amount"
+  oninput="updatePaymentAmount()"
+>
 
 
           <label for="paymentService">
             Repair / Service
           </label>
-
-          <select
-            id="paymentService"
-            onchange="updatePaymentAmount()"
-          >
-
-            <option
-              value="Hinge Repair"
-              data-price="175"
-            >
-              Hinge Repair — K175
-            </option>
-
-            <option
-              value="Windows Installation"
-              data-price="120"
-            >
-              Windows Installation — K120
-            </option>
-
-            <option
-              value="Slow Laptop Diagnosis"
-              data-price="100"
-            >
-              Slow Laptop — K100
-            </option>
-
-            <option
-              value="Windows Activation"
-              data-price="100"
-            >
-              Windows Activation — K100
-            </option>
-
-            <option
-              value="Laptop Power Problem"
-              data-price="150"
-            >
-              Laptop Power Problem — K150
-            </option>
-
-            <option
-              value="Microsoft Office Installation"
-              data-price="100"
-            >
-              Microsoft Office — K100
-            </option>
-
-          </select>
 
 
           <label for="customerName">
@@ -2062,22 +2021,17 @@
        PAYMENT AMOUNT
        ========================================= */
 
-    function updatePaymentAmount() {
+   function updatePaymentAmount() {
+  const amountInput =
+    document.getElementById("paymentAmount");
 
-      const select =
-        document.getElementById("paymentService");
+  const amount =
+    Number(amountInput.value) || 0;
 
-      const option =
-        select.options[select.selectedIndex];
-
-      const price =
-        option.dataset.price || "0";
-
-      document.getElementById(
-        "paymentAmountDisplay"
-      ).textContent = "K" + price;
-
-    }
+  document.getElementById(
+    "paymentAmountDisplay"
+  ).textContent = "K" + amount;
+}
 
 
     /* =========================================
@@ -2107,8 +2061,10 @@
       const service =
         option.value;
 
-      const amount =
-        Number(option.dataset.price);
+     const amount =
+  Number(
+    document.getElementById("paymentAmount").value
+  );
 
 
       if (!name) {
