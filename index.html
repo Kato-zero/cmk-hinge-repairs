@@ -263,7 +263,6 @@
       padding: 25px;
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      overflow: hidden;
       transition: .2s;
     }
 
@@ -282,16 +281,6 @@
       color: var(--green);
       font-size: 1.35rem;
       margin-bottom: 18px;
-    }
-
-    .service-img {
-      display: block;
-      width: calc(100% + 50px);
-      height: 140px;
-      object-fit: cover;
-      margin: -25px -25px 18px -25px;
-      border-radius: var(--radius) var(--radius) 0 0;
-      background: var(--green-light);
     }
 
     .service h3 {
@@ -455,6 +444,36 @@
       color: var(--muted);
       font-size: .78rem;
       margin-top: 10px;
+    }
+
+    .amount-help {
+      margin-top: -7px;
+      margin-bottom: 12px;
+      color: var(--muted);
+      font-size: .78rem;
+      line-height: 1.45;
+    }
+
+    .quick-amounts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: -2px 0 15px;
+    }
+
+    .quick-amounts button {
+      border: 1px solid var(--border);
+      background: #f7faf8;
+      color: var(--green);
+      border-radius: 999px;
+      padding: 7px 11px;
+      font-size: .78rem;
+      font-weight: 800;
+    }
+
+    .quick-amounts button:hover {
+      border-color: var(--accent);
+      background: var(--green-light);
     }
 
     /* WHY */
@@ -1023,14 +1042,6 @@
       <div class="services">
 
         <div class="service">
-          <img class="service-img" src="PASTE-IMAGE-LINK-HERE-1" alt="BIOS Reprogramming" onerror="this.style.display=\'none\'">
-          <div class="service-icon">🧬</div>
-          <h3>BIOS Reprogramming</h3>
-          <p>BIOS chip reprogramming and firmware recovery.</p>
-        </div>
-
-        <div class="service">
-          <img class="service-img" src="PASTE-IMAGE-LINK-HERE-2" alt="Hinge Repair" onerror="this.style.display=\'none\'">
           <div class="service-icon">🔧</div>
           <h3>Hinge Repair</h3>
           <p>Repair damaged, loose or broken laptop hinges.</p>
@@ -1038,46 +1049,38 @@
         </div>
 
         <div class="service">
-          <img class="service-img" src="PASTE-IMAGE-LINK-HERE-3" alt="Laptop Suddenly Went Off" onerror="this.style.display=\'none\'">
-          <div class="service-icon">⚫</div>
-          <h3>Laptop Suddenly Went Off</h3>
-          <p>Diagnosis for laptops that shut down unexpectedly.</p>
+          <div class="service-icon">💻</div>
+          <h3>Windows Installation</h3>
+          <p>Fresh Windows installation and setup.</p>
+          <div class="service-price">K120</div>
         </div>
 
         <div class="service">
-          <img class="service-img" src="PASTE-IMAGE-LINK-HERE-4" alt="No Boot Device Found" onerror="this.style.display=\'none\'">
-          <div class="service-icon">💽</div>
-          <h3>No Boot Device Found</h3>
-          <p>Diagnosis and repair for boot device errors.</p>
-        </div>
-
-        <div class="service">
-          <img class="service-img" src="PASTE-IMAGE-LINK-HERE-5" alt="BCD Error" onerror="this.style.display=\'none\'">
-          <div class="service-icon">🖥️</div>
-          <h3>BCD Error</h3>
-          <p>Fixing boot configuration data errors.</p>
-        </div>
-
-        <div class="service">
-          <img class="service-img" src="PASTE-IMAGE-LINK-HERE-6" alt="Laptop Not Charging" onerror="this.style.display=\'none\'">
-          <div class="service-icon">🔋</div>
-          <h3>Laptop Not Charging</h3>
-          <p>Diagnosis for charging and power delivery faults.</p>
-        </div>
-
-        <div class="service">
-          <img class="service-img" src="PASTE-IMAGE-LINK-HERE-7" alt="Windows Activation Required" onerror="this.style.display=\'none\'">
-          <div class="service-icon">🔑</div>
-          <h3>Windows Activation Required</h3>
-          <p>Windows activation and licensing assistance.</p>
+          <div class="service-icon">⚡</div>
+          <h3>Slow Laptop</h3>
+          <p>Diagnosis and troubleshooting for slow laptops.</p>
           <div class="service-price">K100</div>
         </div>
 
         <div class="service">
-          <img class="service-img" src="PASTE-IMAGE-LINK-HERE-8" alt="Something Else" onerror="this.style.display=\'none\'">
-          <div class="service-icon">📝</div>
-          <h3>Something Else?</h3>
-          <p>Not seeing your issue listed? Tell us what's wrong and we'll take a look.</p>
+          <div class="service-icon">🔑</div>
+          <h3>Windows Activation</h3>
+          <p>Windows activation and update assistance.</p>
+          <div class="service-price">K100</div>
+        </div>
+
+        <div class="service">
+          <div class="service-icon">🔌</div>
+          <h3>Laptop Power Problem</h3>
+          <p>Diagnosis of laptops that won't power on.</p>
+          <div class="service-price">K150</div>
+        </div>
+
+        <div class="service">
+          <div class="service-icon">📄</div>
+          <h3>Microsoft Office</h3>
+          <p>Microsoft Office installation and setup.</p>
+          <div class="service-price">K100</div>
         </div>
 
       </div>
@@ -1191,8 +1194,8 @@
           </h2>
 
           <p>
-            Select your repair, enter your name and mobile
-            money number, then start the payment.
+            Select a service, choose exactly how much you want to pay,
+            then approve the mobile money request on your phone.
           </p>
 
           <ul>
@@ -1212,30 +1215,84 @@
           </h3>
 
 
-         <div class="payment-total">
-  
+          <div class="payment-total">
 
-  
-</div>
+            <span>
+              Amount to Pay
+            </span>
 
-<label for="paymentAmount">
-  Amount to Pay (ZMW)
-</label>
+            <strong id="paymentAmountDisplay">
+              K175
+            </strong>
 
-<input
-  type="number"
-  id="paymentAmount"
-  min="1"
-  step="1"
-  value="175"
-  placeholder="Enter amount"
-  oninput="updatePaymentAmount()"
->
+          </div>
 
 
           <label for="paymentService">
             Repair / Service
           </label>
+
+          <select
+            id="paymentService"
+            onchange="updatePaymentAmount(true)"
+          >
+
+            <option value="Hinge Repair" data-price="175">
+              Hinge Repair — K175
+            </option>
+
+            <option value="Windows Installation" data-price="120">
+              Windows Installation — K120
+            </option>
+
+            <option value="Slow Laptop Diagnosis" data-price="100">
+              Slow Laptop — K100
+            </option>
+
+            <option value="Windows Activation" data-price="100">
+              Windows Activation — K100
+            </option>
+
+            <option value="Laptop Power Problem" data-price="150">
+              Laptop Power Problem — K150
+            </option>
+
+            <option value="Microsoft Office Installation" data-price="100">
+              Microsoft Office — K100
+            </option>
+
+            <option value="Custom / Partial Payment" data-price="0">
+              Custom / Partial Payment
+            </option>
+
+          </select>
+
+
+          <label for="paymentAmount">
+            Amount to Pay (ZMW)
+          </label>
+
+          <input
+            type="number"
+            id="paymentAmount"
+            min="1"
+            step="0.01"
+            inputmode="decimal"
+            value="175"
+            placeholder="Enter amount"
+            oninput="updatePaymentAmount(false)"
+          >
+
+          <div class="amount-help">
+            You can pay the full amount or make a partial payment. Enter the amount you want to pay now.
+          </div>
+
+          <div class="quick-amounts" aria-label="Quick amount choices">
+            <button type="button" onclick="setPaymentAmount(50)">K50</button>
+            <button type="button" onclick="setPaymentAmount(100)">K100</button>
+            <button type="button" onclick="setPaymentAmount(150)">K150</button>
+            <button type="button" onclick="setPaymentAmountFromService()">Full Price</button>
+          </div>
 
 
           <label for="customerName">
@@ -1509,7 +1566,7 @@
             </strong>
 
             <span>
-              097 000 0000
+              096 785 8633
             </span>
 
           </div>
@@ -1548,7 +1605,7 @@
 
             <a
               class="btn btn-primary"
-              href="https://wa.me/260970000000?text=Hello%20CMK%20Laptop%20Repairs%2C%20I%20need%20a%20repair."
+              href="https://wa.me/260967858633?text=Hello%20CMK%20Laptop%20Repairs%2C%20I%20need%20a%20repair."
               target="_blank"
             >
               WhatsApp Us
@@ -1619,6 +1676,14 @@
 
       <div class="admin-card">
 
+        <h3>Recent Payments</h3>
+        <div id="adminPayments"></div>
+
+      </div>
+
+
+      <div class="admin-card">
+
         <button
           class="btn btn-secondary"
           onclick="clearBookings()"
@@ -1675,19 +1740,19 @@
           <div class="footer-links">
 
             <a href="#services">
-              BIOS Reprogramming
-            </a>
-
-            <a href="#services">
               Hinge Repair
             </a>
 
             <a href="#services">
-              No Boot Device Found
+              Windows Installation
             </a>
 
             <a href="#services">
-              Windows Activation
+              Laptop Diagnosis
+            </a>
+
+            <a href="#services">
+              Office Installation
             </a>
 
           </div>
@@ -1791,52 +1856,37 @@
 
 
       <label>
-        Location (where you stay)
-      </label>
-
-      <input
-        type="text"
-        id="bookingLocation"
-        placeholder="e.g. Kabulonga, Lusaka"
-      >
-
-
-      <label>
         Service
       </label>
 
       <select id="bookingService">
 
         <option>
-          BIOS Reprogramming
-        </option>
-
-        <option>
           Hinge Repair — K175
         </option>
 
         <option>
-          Laptop Suddenly Went Off
+          Windows Installation — K120
         </option>
 
         <option>
-          No Boot Device Found
+          Slow Laptop Diagnosis — K100
         </option>
 
         <option>
-          BCD Error
+          Windows Activation — K100
         </option>
 
         <option>
-          Laptop Not Charging
+          Laptop Power Problem — K150
         </option>
 
         <option>
-          Windows Activation Required — K100
+          Microsoft Office Installation — K100
         </option>
 
         <option>
-          Something Else / Not Listed
+          Other / Diagnosis Required
         </option>
 
       </select>
@@ -1857,7 +1907,7 @@
         class="pay-btn"
         onclick="submitBooking()"
       >
-        Continue on WhatsApp →
+        Submit Booking
       </button>
 
     </div>
@@ -2060,20 +2110,116 @@
 
 
     /* =========================================
-       PAYMENT AMOUNT
+       DYNAMIC PAYMENT AMOUNT
        ========================================= */
 
-   function updatePaymentAmount() {
-  const amountInput =
-    document.getElementById("paymentAmount");
+    function getSelectedService() {
 
-  const amount =
-    Number(amountInput.value) || 0;
+      const select = document.getElementById("paymentService");
 
-  document.getElementById(
-    "paymentAmountDisplay"
-  ).textContent = "K" + amount;
-}
+      if (!select || !select.options.length) {
+        return { service: "Repair", price: 0 };
+      }
+
+      const option = select.options[select.selectedIndex];
+
+      return {
+        service: option.value || "Repair",
+        price: Number(option.dataset.price || 0)
+      };
+
+    }
+
+
+    function getPaymentAmount() {
+
+      const input = document.getElementById("paymentAmount");
+      return Number(input ? input.value : 0);
+
+    }
+
+
+    function formatMoney(amount) {
+
+      const value = Number(amount || 0);
+
+      return "K" + value.toLocaleString("en-ZM", {
+        minimumFractionDigits: value % 1 ? 2 : 0,
+        maximumFractionDigits: 2
+      });
+
+    }
+
+
+    function updatePaymentAmount(useServicePrice = false) {
+
+      const input = document.getElementById("paymentAmount");
+      const display = document.getElementById("paymentAmountDisplay");
+      const selected = getSelectedService();
+
+      if (useServicePrice && input) {
+        input.value = selected.price > 0 ? selected.price : "";
+      }
+
+      const amount = getPaymentAmount();
+
+      if (display) {
+        display.textContent = amount > 0 ? formatMoney(amount) : "K0";
+      }
+
+      updatePayButtonText();
+
+    }
+
+
+    function setPaymentAmount(amount) {
+
+      const input = document.getElementById("paymentAmount");
+
+      if (!input) return;
+
+      input.value = amount;
+      updatePaymentAmount(false);
+
+    }
+
+
+    function setPaymentAmountFromService() {
+
+      updatePaymentAmount(true);
+
+    }
+
+
+    function updatePayButtonText() {
+
+      const button = document.getElementById("startPaymentBtn");
+      const amount = getPaymentAmount();
+
+      if (button && !button.disabled) {
+        button.textContent = amount > 0
+          ? "Pay " + formatMoney(amount) + " →"
+          : "Enter Amount →";
+      }
+
+    }
+
+
+    function normalizeZambianPhone(value) {
+
+      let digits = String(value || "").replace(/\D/g, "");
+
+      if (digits.startsWith("260")) {
+        digits = digits.slice(3);
+      }
+
+      if (digits.startsWith("0")) {
+        digits = digits.slice(1);
+      }
+
+      return digits.length === 9 ? "+260" + digits : "";
+
+    }
 
 
     /* =========================================
@@ -2082,184 +2228,144 @@
 
     async function startPayment() {
 
-      const name =
-        document
-          .getElementById("customerName")
-          .value
-          .trim();
-
-      const phone =
-        document
-          .getElementById("customerPaymentNumber")
-          .value
-          .trim();
-
-      const select =
-        document.getElementById("paymentService");
-
-      const option =
-        select.options[select.selectedIndex];
-
-      const service =
-        option.value;
-
-     const amount =
-  Number(
-    document.getElementById("paymentAmount").value
-  );
-
+      const name = document.getElementById("customerName").value.trim();
+      const rawPhone = document.getElementById("customerPaymentNumber").value.trim();
+      const selected = getSelectedService();
+      const service = selected.service;
+      const amount = getPaymentAmount();
+      const phone = normalizeZambianPhone(rawPhone);
 
       if (!name) {
-
-        showToast(
-          "Please enter your name."
-        );
-
-        document
-          .getElementById("customerName")
-          .focus();
-
+        showToast("Please enter your name.");
+        document.getElementById("customerName").focus();
         return;
-
       }
-
 
       if (!phone) {
-
-        showToast(
-          "Please enter your mobile money number."
-        );
-
-        document
-          .getElementById("customerPaymentNumber")
-          .focus();
-
+        showToast("Enter a valid Zambian mobile number, e.g. 0971234567.");
+        document.getElementById("customerPaymentNumber").focus();
         return;
-
       }
 
-
-      if (!amount || amount <= 0) {
-
-        showToast(
-          "Invalid payment amount."
-        );
-
+      if (!Number.isFinite(amount) || amount < 1) {
+        showToast("Enter an amount of at least K1.");
+        document.getElementById("paymentAmount").focus();
         return;
-
       }
 
-
-      const button =
-        document.getElementById(
-          "startPaymentBtn"
-        );
+      const button = document.getElementById("startPaymentBtn");
 
       button.disabled = true;
+      button.textContent = "Starting payment...";
 
-      button.textContent =
-        "Starting payment...";
-
-
-      openPaymentProcessing(
-        service,
-        amount
-      );
-
+      openPaymentProcessing(service, amount);
 
       try {
 
-        const response =
-          await fetch(
-            "/api/createpayment",
-            {
-              method: "POST",
+        const response = await fetch("/api/createpayment", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify({
+            amount: amount,
+            customer_name: name,
+            phone: phone,
+            service: service
+          })
+        });
 
-              headers: {
-                "Content-Type":
-                  "application/json",
-                "Accept":
-                  "application/json"
-              },
+        const result = await response.json().catch(() => ({}));
 
-              body: JSON.stringify({
+        console.log("Create payment response:", result);
 
-                amount: amount,
-
-                customer_name: name,
-
-                phone: phone
-
-              })
-
-            }
-          );
-
-
-        const result =
-          await response.json()
-            .catch(() => ({}));
-
-
-        console.log(
-          "Create payment response:",
-          result
-        );
-
-
-        if (
-          !response.ok ||
-          !result.success ||
-          !result.referenceId
-        ) {
-
+        if (!response.ok || !result.success || !result.referenceId) {
           const message =
             result.message ||
+            result.error ||
             "Unable to create payment.";
-
           throw new Error(message);
-
         }
 
-
-        paymentReference =
-          result.referenceId;
-
+        paymentReference = result.referenceId;
         paymentPollCount = 0;
 
-
-        showPaymentWaiting(
+        // Keep a local record so the customer can see what was initiated.
+        savePaymentRecord({
+          reference: paymentReference,
+          name,
+          phone,
           service,
           amount,
-          paymentReference
-        );
+          status: "PENDING",
+          createdAt: new Date().toISOString()
+        });
 
-
-        /*
-          Start checking Lipila status.
-        */
-
+        showPaymentWaiting(service, amount, paymentReference);
         checkPaymentStatus();
 
       } catch (error) {
 
-        console.error(
-          "PAYMENT ERROR:",
-          error
-        );
+        console.error("PAYMENT ERROR:", error);
 
         showPaymentFailed(
-          error.message ||
-          "Unable to start payment."
+          error.message || "Unable to start payment."
         );
 
       } finally {
 
         button.disabled = false;
+        updatePayButtonText();
 
-        button.textContent =
-          "Pay Now →";
+      }
 
+    }
+
+
+    function savePaymentRecord(record) {
+
+      try {
+        const payments = JSON.parse(
+          localStorage.getItem("cmkPayments") || "[]"
+        );
+
+        payments.unshift(record);
+        localStorage.setItem(
+          "cmkPayments",
+          JSON.stringify(payments.slice(0, 100))
+        );
+      } catch (error) {
+        console.warn("Could not save payment record", error);
+      }
+
+    }
+
+
+    function updateSavedPaymentStatus(status) {
+
+      if (!paymentReference) return;
+
+      try {
+        const payments = JSON.parse(
+          localStorage.getItem("cmkPayments") || "[]"
+        );
+
+        const payment = payments.find(
+          item => item.reference === paymentReference
+        );
+
+        if (payment) {
+          payment.status = status;
+          payment.updatedAt = new Date().toISOString();
+        }
+
+        localStorage.setItem(
+          "cmkPayments",
+          JSON.stringify(payments)
+        );
+      } catch (error) {
+        console.warn("Could not update payment record", error);
       }
 
     }
@@ -2273,6 +2379,8 @@
       service,
       amount
     ) {
+
+      updateSavedPaymentStatus("SUCCESS");
 
       document.getElementById(
         "paymentModalContent"
@@ -2574,55 +2682,34 @@
 
     function findPaymentStatus(data) {
 
-      if (!data) {
-        return "";
-      }
+      if (!data) return "";
 
-
-      /*
-        Try common field names.
-      */
-
-      const possibleValues = [
-
-        data.status,
-
-        data.paymentStatus,
-
-        data.transactionStatus,
-
-        data.collectionStatus,
-
-        data.state,
-
-        data.result?.status,
-
-        data.data?.status,
-
-        data.transaction?.status,
-
-        data.payment?.status
-
+      const keys = [
+        "status",
+        "paymentStatus",
+        "transactionStatus",
+        "collectionStatus",
+        "state"
       ];
 
-
-      for (
-        const value of possibleValues
-      ) {
-
-        if (
-          typeof value === "string" &&
-          value.trim()
-        ) {
-
-          return value
-            .trim()
-            .toUpperCase();
-
-        }
-
+      if (typeof data === "string") {
+        return data.trim().toUpperCase();
       }
 
+      if (typeof data !== "object") return "";
+
+      for (const key of keys) {
+        if (typeof data[key] === "string" && data[key].trim()) {
+          return data[key].trim().toUpperCase();
+        }
+      }
+
+      for (const value of Object.values(data)) {
+        if (value && typeof value === "object") {
+          const found = findPaymentStatus(value);
+          if (found) return found;
+        }
+      }
 
       return "";
 
@@ -2750,6 +2837,8 @@
       `;
 
 
+      renderAdminPayments();
+
       showToast(
         "Payment confirmed successfully."
       );
@@ -2764,6 +2853,8 @@
     function showPaymentFailed(
       message
     ) {
+
+      updateSavedPaymentStatus("FAILED");
 
       if (paymentPollTimer) {
 
@@ -2881,9 +2972,6 @@
     }
 
 
-    const CMK_WHATSAPP_NUMBER = "260967858633";
-
-
     function submitBooking() {
 
       const name =
@@ -2895,12 +2983,6 @@
       const phone =
         document
           .getElementById("bookingPhone")
-          .value
-          .trim();
-
-      const location =
-        document
-          .getElementById("bookingLocation")
           .value
           .trim();
 
@@ -2919,7 +3001,6 @@
       if (
         !name ||
         !phone ||
-        !location ||
         !problem
       ) {
 
@@ -2940,7 +3021,6 @@
 
         name,
         phone,
-        location,
         service,
         problem,
 
@@ -2970,21 +3050,6 @@
       );
 
 
-      const whatsappMessage =
-        "Hello CMK Laptop Repairs, I'd like to book a repair.\n\n" +
-        "Name: " + name + "\n" +
-        "Location: " + location + "\n" +
-        "Phone: " + phone + "\n" +
-        "Service: " + service + "\n" +
-        "Problem: " + problem;
-
-      const whatsappUrl =
-        "https://wa.me/" +
-        CMK_WHATSAPP_NUMBER +
-        "?text=" +
-        encodeURIComponent(whatsappMessage);
-
-
       closeModal(
         "bookingModal"
       );
@@ -2999,26 +3064,16 @@
       ).value = "";
 
       document.getElementById(
-        "bookingLocation"
-      ).value = "";
-
-      document.getElementById(
         "bookingProblem"
       ).value = "";
 
 
       showToast(
-        "Redirecting you to WhatsApp to confirm..."
+        "Booking received successfully!"
       );
 
 
       renderAdminBookings();
-
-
-      window.open(
-        whatsappUrl,
-        "_blank"
-      );
 
     }
 
@@ -3296,14 +3351,6 @@
 
               <small>
                 ${escapeHTML(
-                  booking.location || ""
-                )}
-              </small>
-
-              <br>
-
-              <small>
-                ${escapeHTML(
                   booking.service
                 )}
               </small>
@@ -3328,6 +3375,33 @@
 
           `)
           .join("");
+
+    }
+
+
+    function renderAdminPayments() {
+
+      const container = document.getElementById("adminPayments");
+      if (!container) return;
+
+      const payments = JSON.parse(
+        localStorage.getItem("cmkPayments") || "[]"
+      );
+
+      if (!payments.length) {
+        container.innerHTML = '<p style="color:#a8b5b0;margin-top:15px;">No payments yet.</p>';
+        return;
+      }
+
+      container.innerHTML = payments.slice(0, 20).map(payment => `
+        <div class="booking-row">
+          <strong>${escapeHTML(payment.name || "Customer")}</strong><br>
+          <small>${escapeHTML(payment.service || "Repair")} · ${formatMoney(payment.amount)}</small><br>
+          <small>${escapeHTML(payment.phone || "")}</small><br>
+          <small>Reference: ${escapeHTML(payment.reference || "—")}</small><br>
+          <small>Status: ${escapeHTML(payment.status || "PENDING")}</small>
+        </div>
+      `).join("");
 
     }
 
@@ -3502,6 +3576,7 @@
 
 
           renderAdminBookings();
+          renderAdminPayments();
 
 
           document
@@ -3533,8 +3608,9 @@
     renderReviews();
 
     renderAdminBookings();
+    renderAdminPayments();
 
-    updatePaymentAmount();
+    updatePaymentAmount(false);
 
   </script>
 
