@@ -32,7 +32,6 @@
 
     html {
       scroll-behavior: smooth;
-      overflow-x: hidden;
     }
 
     body {
@@ -40,7 +39,6 @@
       color: var(--black);
       background: var(--bg);
       line-height: 1.6;
-      overflow-x: hidden;
     }
 
     button,
@@ -782,7 +780,6 @@
     .toast {
       position: fixed;
       right: 20px;
-      left: 20px;
       bottom: 20px;
       z-index: 5000;
       background: #101716;
@@ -792,7 +789,6 @@
       display: none;
       box-shadow: var(--shadow);
       max-width: 350px;
-      margin-left: auto;
     }
 
     .toast.show {
@@ -822,27 +818,9 @@
         left: 0;
         right: 0;
         background: white;
-        padding: 10px 20px 20px;
+        padding: 20px;
         flex-direction: column;
-        align-items: stretch;
-        gap: 4px;
         border-bottom: 1px solid var(--border);
-        max-height: calc(100vh - 72px);
-        overflow-y: auto;
-      }
-
-      .nav-links a {
-        padding: 12px 4px;
-        border-bottom: 1px solid var(--border);
-      }
-
-      .nav-links a:last-child {
-        border-bottom: 0;
-        margin-top: 8px;
-      }
-
-      .nav-cta {
-        text-align: center;
       }
 
       .nav-links.open {
@@ -906,56 +884,6 @@
 
       .buttons .btn {
         width: 100%;
-      }
-    }
-
-    @media (max-width: 400px) {
-
-      .logo span:last-child {
-        font-size: .92rem;
-      }
-
-      .logo-icon {
-        width: 36px;
-        height: 36px;
-      }
-
-      .badge {
-        font-size: .74rem;
-        padding: 6px 10px;
-      }
-
-      h1 {
-        font-size: clamp(2.1rem, 9vw, 2.6rem);
-        letter-spacing: -1px;
-      }
-
-      .hero-text {
-        font-size: 1rem;
-      }
-
-      .price {
-        font-size: 2.3rem;
-      }
-
-      .service-img {
-        height: 120px;
-      }
-
-      .modal-box {
-        padding: 20px;
-      }
-
-      .status-icon {
-        width: 60px;
-        height: 60px;
-        font-size: 1.6rem;
-      }
-
-      .step,
-      .why,
-      .contact-card {
-        padding: 20px;
       }
     }
   </style>
