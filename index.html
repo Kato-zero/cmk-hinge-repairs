@@ -916,7 +916,7 @@
     <div class="container nav-inner">
 
       <a href="#" class="logo">
-        <span class="logo-icon">CMK</span>
+        <span class="logo-icon"> CMK </span>
         <span>CMK Laptop Repairs</span>
       </a>
 
@@ -964,6 +964,7 @@
           Professional laptop repair, Windows installation,
           software setup, hinge repairs and troubleshooting.
           Fast, affordable and convenient.
+        <p>REMEMBER: We are mobile, meaning i follow you to fix the laptop.</p> 
         </p>
 
         <div class="buttons">
@@ -1059,28 +1060,21 @@
           <div class="service-icon">⚡</div>
           <h3>Slow Laptop</h3>
           <p>Diagnosis and troubleshooting for slow laptops.</p>
-          <div class="service-price">K100</div>
+          <div class="service-price">K120</div>
         </div>
 
         <div class="service">
           <div class="service-icon">🔑</div>
-          <h3>Windows Activation</h3>
+          <h3>Windows Activation(Remotely)</h3>
           <p>Windows activation and update assistance.</p>
           <div class="service-price">K100</div>
-        </div>
-
-        <div class="service">
-          <div class="service-icon">🔌</div>
-          <h3>Laptop Power Problem</h3>
-          <p>Diagnosis of laptops that won't power on.</p>
-          <div class="service-price">K150</div>
         </div>
 
         <div class="service">
           <div class="service-icon">📄</div>
           <h3>Microsoft Office</h3>
           <p>Microsoft Office installation and setup.</p>
-          <div class="service-price">K100</div>
+          <div class="service-price">K120</div>
         </div>
 
       </div>
@@ -1213,62 +1207,7 @@
           <h3>
             Payment Details
           </h3>
-
-
-          <div class="payment-total">
-
-            <span>
-              Amount to Pay
-            </span>
-
-            <strong id="paymentAmountDisplay">
-              K175
-            </strong>
-
-          </div>
-
-
-          <label for="paymentService">
-            Repair / Service
-          </label>
-
-          <select
-            id="paymentService"
-            onchange="updatePaymentAmount(true)"
-          >
-
-            <option value="Hinge Repair" data-price="175">
-              Hinge Repair — K175
-            </option>
-
-            <option value="Windows Installation" data-price="120">
-              Windows Installation — K120
-            </option>
-
-            <option value="Slow Laptop Diagnosis" data-price="100">
-              Slow Laptop — K100
-            </option>
-
-            <option value="Windows Activation" data-price="100">
-              Windows Activation — K100
-            </option>
-
-            <option value="Laptop Power Problem" data-price="150">
-              Laptop Power Problem — K150
-            </option>
-
-            <option value="Microsoft Office Installation" data-price="100">
-              Microsoft Office — K100
-            </option>
-
-            <option value="Custom / Partial Payment" data-price="0">
-              Custom / Partial Payment
-            </option>
-
-          </select>
-
-
-          <label for="paymentAmount">
+        <label for="paymentAmount">
             Amount to Pay (ZMW)
           </label>
 
@@ -1282,17 +1221,6 @@
             placeholder="Enter amount"
             oninput="updatePaymentAmount(false)"
           >
-
-          <div class="amount-help">
-            You can pay the full amount or make a partial payment. Enter the amount you want to pay now.
-          </div>
-
-          <div class="quick-amounts" aria-label="Quick amount choices">
-            <button type="button" onclick="setPaymentAmount(50)">K50</button>
-            <button type="button" onclick="setPaymentAmount(100)">K100</button>
-            <button type="button" onclick="setPaymentAmount(150)">K150</button>
-            <button type="button" onclick="setPaymentAmountFromService()">Full Price</button>
-          </div>
 
 
           <label for="customerName">
@@ -1829,7 +1757,7 @@
       </h2>
 
       <p class="modal-subtitle">
-        Tell us what you need help with.
+        Tell us what you need help with. We'll send this straight to our WhatsApp.
       </p>
 
 
@@ -1842,54 +1770,6 @@
         id="bookingName"
         placeholder="Full name"
       >
-
-
-      <label>
-        WhatsApp / Phone
-      </label>
-
-      <input
-        type="tel"
-        id="bookingPhone"
-        placeholder="097 XXX XXXX"
-      >
-
-
-      <label>
-        Service
-      </label>
-
-      <select id="bookingService">
-
-        <option>
-          Hinge Repair — K175
-        </option>
-
-        <option>
-          Windows Installation — K120
-        </option>
-
-        <option>
-          Slow Laptop Diagnosis — K100
-        </option>
-
-        <option>
-          Windows Activation — K100
-        </option>
-
-        <option>
-          Laptop Power Problem — K150
-        </option>
-
-        <option>
-          Microsoft Office Installation — K100
-        </option>
-
-        <option>
-          Other / Diagnosis Required
-        </option>
-
-      </select>
 
 
       <label>
@@ -2047,6 +1927,7 @@
 
     const MAX_PAYMENT_POLLS = 40;
     const PAYMENT_POLL_INTERVAL = 3000;
+    const BOOKING_WHATSAPP_NUMBER = "260967858633";
 
 
     /* NAVIGATION */
@@ -2379,8 +2260,6 @@
       service,
       amount
     ) {
-
-      updateSavedPaymentStatus("SUCCESS");
 
       document.getElementById(
         "paymentModalContent"
@@ -2792,6 +2671,8 @@
 
       }
 
+      updateSavedPaymentStatus("SUCCESS");
+
 
       document.getElementById(
         "paymentModalContent"
@@ -2980,17 +2861,6 @@
           .value
           .trim();
 
-      const phone =
-        document
-          .getElementById("bookingPhone")
-          .value
-          .trim();
-
-      const service =
-        document
-          .getElementById("bookingService")
-          .value;
-
       const problem =
         document
           .getElementById("bookingProblem")
@@ -3000,12 +2870,11 @@
 
       if (
         !name ||
-        !phone ||
         !problem
       ) {
 
         showToast(
-          "Please complete all required fields."
+          "Please enter your name and describe the problem."
         );
 
         return;
@@ -3020,8 +2889,6 @@
           Date.now(),
 
         name,
-        phone,
-        service,
         problem,
 
         date:
@@ -3050,6 +2917,21 @@
       );
 
 
+      renderAdminBookings();
+
+
+      const message =
+        "Hello CMK Laptop Repairs, I would like to book a repair.\n\n" +
+        "Name: " + name + "\n" +
+        "Problem: " + problem;
+
+      const whatsappUrl =
+        "https://wa.me/" +
+        BOOKING_WHATSAPP_NUMBER +
+        "?text=" +
+        encodeURIComponent(message);
+
+
       closeModal(
         "bookingModal"
       );
@@ -3060,20 +2942,11 @@
       ).value = "";
 
       document.getElementById(
-        "bookingPhone"
-      ).value = "";
-
-      document.getElementById(
         "bookingProblem"
       ).value = "";
 
 
-      showToast(
-        "Booking received successfully!"
-      );
-
-
-      renderAdminBookings();
+      window.location.href = whatsappUrl;
 
     }
 
@@ -3338,22 +3211,6 @@
                   booking.name
                 )}
               </strong>
-
-              <br>
-
-              <small>
-                ${escapeHTML(
-                  booking.phone
-                )}
-              </small>
-
-              <br>
-
-              <small>
-                ${escapeHTML(
-                  booking.service
-                )}
-              </small>
 
               <br>
 
